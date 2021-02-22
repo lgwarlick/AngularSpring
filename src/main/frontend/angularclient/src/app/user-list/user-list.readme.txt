@@ -1,0 +1,2 @@
+This user-list component simply serves to pull user's from the database (using UserService) and render them in HTML
+The component calls the findAll method of UserService, stores each in an array, then uses *ngFor to display them in user-list-component.html

@@ -1,0 +1,2 @@
+The layer between the database and the application's presentation.
+Provides methods for saving new users (.save) and fetching all users (.findAll)
