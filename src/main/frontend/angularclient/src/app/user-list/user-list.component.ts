@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from "../model/user";
+import {UserService} from "../service/user.service";
+
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  // @ts-ignore
+  users: User[];
 
-  ngOnInit(): void {
+  constructor(private userService: UserService) {
+  }
+
+  //takes findAll method from userService and stores them in users array
+  ngOnInit() {
+    this.userService.findAll().subscribe(data => {
+      this.users = data;
+    });
   }
 
 }
