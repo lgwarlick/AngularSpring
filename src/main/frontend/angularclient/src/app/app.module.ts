@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {UserService} from "./service/user.service";
 
 @NgModule({
   declarations: [
@@ -13,12 +15,13 @@ import {FormsModule} from "@angular/forms";
     UserListComponent,
     UserFormComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
